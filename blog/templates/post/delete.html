@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <a class="btn btn-success" href="{% url 'details' object.id %}">cancel</a>
+    <button>delete</button>
+</form>
+{% endblock content %}

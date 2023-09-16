@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<div class="container my-5">
+    <div class="card p-2">
+        <a href="{% url 'details' post.id %}">
+            <h2> {{post.title}} </h2>
+        </a>
+        <div class="">
+            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Image Alt Text"
+                class="img-fluid">
+        </div>
+        <a href="">
+            <div style="display: flex; flex-direction:row ; padding-top: 10px; align-items: center; gap: 4px;">
+                <div>
+                    <img width="30" height="30" style="border-radius: 100%;" src={{user.profile.image.url}} alt="">
+                </div>
+                <div>
+
+                    <h4>
+                        {{post.author}}
+                    </h4>
+                </div>
+            </div>
+
+
+        </a>
+        <div class="">
+            <p> {{post.content}}</p>
+            <p>Blog post description goes here. This is where you can provide some information about the post.
+                Blog post description goes here. This is where you can provide some information about the post.
+                Blog post description goes here. This is where you can provide some information about the post.</p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %}
+
+
+{% endblock content %}
